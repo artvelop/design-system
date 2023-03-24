@@ -10,6 +10,7 @@
       "@components/*": ["components/*"],
       "@constants/*": ["constants/*"],
       "@core/*": ["core/*"],
+      "@types/*": ["types/*"],
       "@src/*": ["./*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
