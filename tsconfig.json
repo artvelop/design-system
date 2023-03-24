@@ -9,6 +9,7 @@
       "@hooks/*": ["hooks/*"],
       "@components/*": ["components/*"],
       "@constants/*": ["constants/*"],
+      "@core/*": ["core/*"],
       "@src/*": ["./*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
