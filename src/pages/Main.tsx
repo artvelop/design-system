@@ -1,11 +1,24 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
+import { Typography } from '@components/theme/typography/Typography';
 
 export const Main = () => {
   return (
     <Container>
-      <div>Main</div>
+      <Typography variant="h1">Hello</Typography>
+      <Typography variant="h2">Hello</Typography>
+      <Typography variant="h3">Hello</Typography>
+      <Typography variant="h4">Hello</Typography>
+      <Typography variant="h5">Hello</Typography>
+      <Typography variant="h6">Hello</Typography>
+      <Typography variant="body1">Hello</Typography>
+      <Typography variant="body2">Hello</Typography>
+      <Typography variant="button">Hello</Typography>
+      <Typography variant="caption">Hello</Typography>
+      <Typography variant="subtitle1">Hello</Typography>
+      <Typography variant="subtitle2">Hello</Typography>
+      <Typography variant="overline">Hello</Typography>
     </Container>
   );
 };
@@ -19,6 +32,7 @@ const Container = styled.div`
       height: 100vh;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
     `;
   }}
 `;
