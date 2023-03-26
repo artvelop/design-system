@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { Typography } from '@components/theme/typography/Typography';
+import { Typography } from '@components/ui/typography/Typography';
 
 export const Main = () => {
   return (
