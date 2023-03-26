@@ -18,8 +18,8 @@ export const Typography = ({ variant = 'body1', as, children, color }: PropsWith
 };
 
 const Content = styled.span<Props>`
-  ${({ theme, variant, color }) => {
-    const props: TypographyProperty = theme.typography?.[variant ?? 'body1'] ?? {};
+  ${({ theme, variant = 'body1', color }) => {
+    const props: TypographyProperty = theme.typography[variant] ?? {};
 
     return css`
       font-size: ${props.fontSize};
