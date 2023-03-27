@@ -1,8 +1,8 @@
 export type PaletteType = 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'info' | 'black' | 'white';
 
 export const palette = {
-  primary: '#1F7CD2',
-  secondary: '#6E759F',
+  primary: '#3361FF',
+  secondary: '#6688FF',
   success: '#44D600',
   warning: '#FFA319',
   error: '#FF1943',
