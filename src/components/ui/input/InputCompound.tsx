@@ -5,7 +5,7 @@ import { Container } from './Container';
 import { Input } from './Input';
 import { Label } from './Label';
 
-export interface InputContextProps {
+export interface InputContextType {
   id?: string;
   value: string;
   type: React.HTMLInputTypeAttribute;
@@ -13,15 +13,11 @@ export interface InputContextProps {
   inputRef: MutableRefObject<HTMLInputElement>;
 }
 
-export const InputContext = createContext<InputContextProps>({} as InputContextProps);
+export type InputCompoundProps = Omit<InputContextType, 'inputRef'>;
 
-export const InputCompound = ({
-  id,
-  value,
-  type,
-  onChange,
-  children,
-}: PropsWithChildren<Omit<InputContextProps, 'inputRef'>>) => {
+export const InputContext = createContext<InputContextType>({} as InputContextType);
+
+export const InputCompound = ({ id, value, type, onChange, children }: PropsWithChildren<InputCompoundProps>) => {
   const inputRef = useRef({} as HTMLInputElement);
   const contextValue = { id, value, type, onChange, inputRef };
 
