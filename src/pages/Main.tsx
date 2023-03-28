@@ -4,6 +4,7 @@ import { css } from '@emotion/react';
 import { Typography } from '@components/ui/typography/Typography';
 import { InputCompound } from '@components/ui/input/InputCompound';
 import { useState } from 'react';
+import { Button } from '@components/ui/button/Button';
 
 export const Main = () => {
   const [inputValue, setInputValue] = useState('');
@@ -33,6 +34,27 @@ export const Main = () => {
           <InputCompound.Input />
         </InputCompound.Container>
       </InputCompound>
+      <Button size="small">HELLO</Button>
+      <Button size="small" variant="contained">
+        HELLO
+      </Button>
+      <Button size="small" variant="outlined">
+        HELLO
+      </Button>
+      <Button size="medium">HELLO</Button>
+      <Button size="medium" variant="contained">
+        HELLO
+      </Button>
+      <Button size="medium" variant="outlined">
+        HELLO
+      </Button>
+      <Button size="large">HELLO</Button>
+      <Button size="large" variant="contained">
+        HELLO
+      </Button>
+      <Button size="large" variant="outlined">
+        HELLO
+      </Button>
     </Container>
   );
 };
