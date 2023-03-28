@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { ButtonSize, ButtonSizeProperty, ButtonVariant } from '@core/theme/button';
+import { ButtonSize, ButtonVariant } from '@core/theme/button';
 import { PaletteType } from '@core/theme/palette';
 
 interface Props {
@@ -20,13 +20,14 @@ export const Button = ({ variant, size, color, children }: PropsWithChildren<Pro
 
 const ButtonContainer = styled.button<Props>`
   ${({ theme, variant = 'text', size = 'small', color = 'primary' }) => {
-    const buttonSize: ButtonSizeProperty = theme.button.size[size];
+    const buttonSize = theme.button.size[size];
     const buttonColor = theme.palette[color];
     const buttonVaraint = theme.button.variant[variant](buttonColor);
+    const buttonRootStyle = theme.button.root;
 
     return css`
-      cursor: pointer;
-      padding: ${buttonSize.padding};
+      ${buttonRootStyle}
+      ${buttonSize}
       ${buttonVaraint}
     `;
   }}
