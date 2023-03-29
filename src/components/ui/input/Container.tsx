@@ -12,7 +12,7 @@ export const Container = ({ children }: PropsWithChildren) => {
   return <InputContainer onClick={handleClickWrapper}>{children}</InputContainer>;
 };
 
-const InputContainer = styled.form`
+const InputContainer = styled.div`
   ${({ theme }) => {
     const { palette } = theme;
 
