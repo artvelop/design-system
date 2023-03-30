@@ -28,22 +28,12 @@ export const Tab = ({ value, label }: Props) => {
 
 const TabWrapper = styled.div<TabStyleProps>`
   ${({ theme, select }) => {
-    if (select) {
-      return css`
-        cursor: pointer;
-        background-color: ${theme.palette.primary};
-        border-radius: 4px;
-        padding: 8px 16px;
-        color: ${theme.palette.white};
-      `;
-    } else {
-      return css`
-        cursor: pointer;
-        background-color: transparent;
-        border-radius: 4px;
-        padding: 8px 16px;
-        color: ${theme.palette.color.gray6};
-      `;
-    }
+    const rootStyle = theme.tab.root;
+    const selectStyle = theme.tab.select[select ? 'true' : 'false']();
+
+    return css`
+      ${rootStyle}
+      ${selectStyle}
+    `;
   }}
 `;
