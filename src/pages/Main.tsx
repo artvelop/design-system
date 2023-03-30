@@ -5,13 +5,19 @@ import { Typography } from '@components/ui/typography/Typography';
 import { InputCompound } from '@components/ui/input/InputCompound';
 import { useState } from 'react';
 import { Button } from '@components/ui/button/Button';
+import { TabCompound } from '@components/ui/tab/TabCompound';
+
+type MainTabType = 'all' | 'set' | 'this';
 
 export const Main = () => {
   const [inputValue, setInputValue] = useState('');
+  const [tabValue, setTabValue] = useState<MainTabType>('all');
 
   const handleChangeInputValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
+
+  const handleChangeTabValue = (value: MainTabType) => setTabValue(value);
 
   return (
     <Container>
@@ -55,6 +61,13 @@ export const Main = () => {
       <Button size="large" variant="outlined">
         HELLO
       </Button>
+      <TabCompound value={tabValue} onChange={handleChangeTabValue}>
+        <TabCompound.Container>
+          <TabCompound.Tab value="all" label="전체" />
+          <TabCompound.Tab value="set" label="셋팅" />
+          <TabCompound.Tab value="this" label="이것" />
+        </TabCompound.Container>
+      </TabCompound>
     </Container>
   );
 };
@@ -62,7 +75,7 @@ export const Main = () => {
 const Container = styled.div`
   ${({ theme }) => {
     return css`
-      background-color: ${theme.palette.white};
+      background-color: ${theme.palette.color.gray1};
       display: flex;
       width: 100vw;
       height: 100vh;
