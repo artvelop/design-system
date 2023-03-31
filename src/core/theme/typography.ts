@@ -1,3 +1,5 @@
+import { css, SerializedStyles } from '@emotion/react';
+
 export type TypographyVariant =
   | 'h1'
   | 'h2'
@@ -13,72 +15,65 @@ export type TypographyVariant =
   | 'subtitle2'
   | 'overline';
 
-export type TypographyProperty = {
-  fontWeight?: string;
-  fontSize?: string;
-  lineHeight?: string;
-  textTransform?: string;
-};
-
-export const typography: Record<TypographyVariant, TypographyProperty> = {
-  h1: {
-    fontWeight: '700',
-    fontSize: '30px',
-    lineHeight: '36px',
-  },
-  h2: {
-    fontWeight: '700',
-    fontSize: '25px',
-    lineHeight: '32px',
-  },
-  h3: {
-    fontWeight: '700',
-    fontSize: '21px',
-    lineHeight: '30px',
-  },
-  h4: {
-    fontWeight: '700',
-    fontSize: '16px',
-    lineHeight: '24px',
-  },
-  h5: {
-    fontWeight: '700',
-    fontSize: '14px',
-    lineHeight: '20px',
-  },
-  h6: {
-    fontSize: '15px',
-    lineHeight: '20px',
-  },
-  body1: {
-    fontSize: '14px',
-    lineHeight: '20px',
-  },
-  body2: {
-    fontSize: '14px',
-    lineHeight: '20px',
-  },
-  button: {
-    fontWeight: '400',
-    fontSize: '14px',
-    lineHeight: '20px',
-  },
-  caption: {
-    fontSize: '13px',
-    textTransform: 'uppercase',
-    lineHeight: '20px',
-  },
-  subtitle1: {
-    fontSize: '14px',
-  },
-  subtitle2: {
-    fontWeight: '400',
-    fontSize: '15px',
-  },
-  overline: {
-    fontWeight: '400',
-    fontSize: '13px',
-    lineHeight: '16px',
-    textTransform: 'uppercase',
-  },
+export const typography: Record<TypographyVariant, SerializedStyles> = {
+  h1: css`
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+  `,
+  h2: css`
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 32px;
+  `,
+  h3: css`
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 30px;
+  `,
+  h4: css`
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+  `,
+  h5: css`
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+  `,
+  h6: css`
+    font-size: 15px;
+    line-height: 20px;
+  `,
+  body1: css`
+    font-size: 14px;
+    line-height: 20px;
+  `,
+  body2: css`
+    font-size: 14px;
+    line-height: 20px;
+  `,
+  button: css`
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  `,
+  caption: css`
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: 20px;
+  `,
+  subtitle1: css`
+    font-size: 14px;
+  `,
+  subtitle2: css`
+    font-weight: 400;
+    font-size: 15px;
+  `,
+  overline: css`
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-transform: uppercase;
+  `,
 } as const;

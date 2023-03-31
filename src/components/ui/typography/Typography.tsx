@@ -1,5 +1,5 @@
 import { PaletteType } from '@core/theme/palette';
-import { TypographyProperty, TypographyVariant } from '@core/theme/typography';
+import { TypographyVariant } from '@core/theme/typography';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import React, { PropsWithChildren } from 'react';
@@ -20,13 +20,10 @@ export const Typography = ({ variant, as, children, color }: PropsWithChildren<P
 
 const Content = styled.span<Props>`
   ${({ theme, variant = 'body1', color = 'black' }) => {
-    const props: TypographyProperty = theme.typography[variant];
+    const variantStyle = theme.typography[variant];
 
     return css`
-      font-size: ${props.fontSize};
-      font-weight: ${props.fontWeight};
-      line-height: ${props.lineHeight};
-      text-transform: ${props.textTransform};
+      ${variantStyle}
       color: ${theme.palette[color]};
     `;
   }}
