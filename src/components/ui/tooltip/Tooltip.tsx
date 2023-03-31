@@ -1,9 +1,21 @@
-import React from 'react';
+import styled from '@emotion/styled';
+import React, { PropsWithChildren } from 'react';
 
-export const Tooltip = () => {
+interface Props {
+  description: string;
+}
+
+export const Tooltip = ({ description, children }: PropsWithChildren<Props>) => {
   return (
-    <div>
-      <div>Tooltip</div>
-    </div>
+    <Wrapper>
+      {children}
+      <TooltipWrapper>{description}</TooltipWrapper>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  display: flex;
+`;
+
+const TooltipWrapper = styled.div``;
