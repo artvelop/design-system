@@ -6,6 +6,7 @@ import { InputCompound } from '@components/ui/input/InputCompound';
 import { useState } from 'react';
 import { Button } from '@components/ui/button/Button';
 import { TabCompound } from '@components/ui/tab/TabCompound';
+import { Tooltip } from '@components/ui/tooltip/Tooltip';
 
 type MainTabType = 'all' | 'set' | 'this';
 
@@ -21,7 +22,9 @@ export const Main = () => {
 
   return (
     <Container>
-      <Typography variant="h1">Hello</Typography>
+      <Tooltip description="이것은 탭 입니다">
+        <Typography variant="h1">Hello</Typography>
+      </Tooltip>
       <Typography variant="h2">Hello</Typography>
       <Typography variant="h3">Hello</Typography>
       <Typography variant="h4">Hello</Typography>
@@ -58,16 +61,20 @@ export const Main = () => {
       <Button size="large" variant="contained">
         HELLO
       </Button>
-      <Button size="large" variant="outlined">
-        HELLO
-      </Button>
-      <TabCompound value={tabValue} onChange={handleChangeTabValue}>
-        <TabCompound.Container>
-          <TabCompound.Tab value="all" label="전체" />
-          <TabCompound.Tab value="set" label="셋팅" />
-          <TabCompound.Tab value="this" label="이것" />
-        </TabCompound.Container>
-      </TabCompound>
+      <Tooltip description="이것은 탭 입니다">
+        <Button size="large" variant="outlined">
+          HELLO
+        </Button>
+      </Tooltip>
+      <Tooltip description="이것은 탭 입니다">
+        <TabCompound value={tabValue} onChange={handleChangeTabValue}>
+          <TabCompound.Container>
+            <TabCompound.Tab value="all" label="전체" />
+            <TabCompound.Tab value="set" label="셋팅" />
+            <TabCompound.Tab value="this" label="이것" />
+          </TabCompound.Container>
+        </TabCompound>
+      </Tooltip>
     </Container>
   );
 };
