@@ -7,7 +7,6 @@
 - props로 전달 받는 union타입의 경우 머터리얼 ui 레퍼런스를 참고한다
 - emotion에서 제공하는 ThemeProvider의 theme Props 재정의하여 스타일 통일화한다
 - 모든 ui 컴포넌트는 유지보수에 따라 변경이 자주 일어날 것으로 간주하고 만든다
-- 다양한 역할을 하는 컴포넌트의 경우 compound 패턴을 사용한다
 - 컴포넌트 내에서 재사용성이 높은 로직의 경우 custom hooks로 분리한다
 
 # 커밋 컨벤션
