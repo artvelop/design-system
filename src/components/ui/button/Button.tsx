@@ -4,15 +4,17 @@ import { css } from '@emotion/react';
 import { ButtonSize, ButtonVariant } from '@core/theme/button';
 import { PaletteType } from '@core/theme/palette';
 
-interface Props {
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   size?: ButtonSize;
   color?: PaletteType;
 }
 
-export const Button = ({ variant, size, color, children }: PropsWithChildren<Props>) => {
+export const Button = (props: PropsWithChildren<Props>) => {
+  const { variant, size, color, children } = props;
+
   return (
-    <ButtonContainer variant={variant} size={size} color={color}>
+    <ButtonContainer variant={variant} size={size} color={color} {...props}>
       {children}
     </ButtonContainer>
   );
