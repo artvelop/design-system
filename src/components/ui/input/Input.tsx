@@ -4,14 +4,25 @@ import React from 'react';
 import { useContext } from 'react';
 import { InputContext } from './InputCompound';
 
-interface Props {
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
 }
 
-export const Input = ({ placeholder }: Props) => {
+export const Input = (props: Props) => {
+  const { placeholder } = props;
   const { id, value, type, onChange, inputRef } = useContext(InputContext);
 
-  return <InputField ref={inputRef} placeholder={placeholder} id={id} value={value} type={type} onChange={onChange} />;
+  return (
+    <InputField
+      ref={inputRef}
+      placeholder={placeholder}
+      id={id}
+      value={value}
+      type={type}
+      onChange={onChange}
+      {...props}
+    />
+  );
 };
 
 const InputField = styled.input`
