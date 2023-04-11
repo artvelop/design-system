@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { Button } from '@components/ui/button/Button';
 import { TabCompound } from '@components/ui/tab/TabCompound';
 import { Tooltip } from '@components/ui/tooltip/Tooltip';
+import { Divider } from '@components/ui/divider/Divider';
 
 type MainTabType = 'all' | 'set' | 'this';
 
@@ -75,6 +76,7 @@ export const Main = () => {
           </TabCompound.Container>
         </TabCompound>
       </Tooltip>
+      <Divider />
     </Container>
   );
 };
