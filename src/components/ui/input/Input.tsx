@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import React from 'react';
 import { useContext } from 'react';
-import { InputContext } from './InputCompound';
+import { InputContext } from './Index';
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;

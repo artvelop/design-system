@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import React, { PropsWithChildren, useContext } from 'react';
-import { InputContext } from './InputCompound';
+import { InputContext } from './Index';
 
 export const Container = ({ children }: PropsWithChildren) => {
   const { inputRef } = useContext(InputContext);
