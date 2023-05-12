@@ -8,18 +8,26 @@ import { Button } from '@components/ui/button/Button';
 import { TabCompound } from '@components/ui/tab/Index';
 import { Tooltip } from '@components/ui/tooltip/Tooltip';
 import { Divider } from '@components/ui/divider/Divider';
+import { useMessageModal } from '@hooks/useMessageModal';
 
 type MainTabType = 'all' | 'set' | 'this';
 
 export const Main = () => {
   const [inputValue, setInputValue] = useState('');
   const [tabValue, setTabValue] = useState<MainTabType>('all');
+  const messageModal = useMessageModal();
 
   const handleChangeInputValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 
   const handleChangeTabValue = (value: MainTabType) => setTabValue(value);
+
+  const handleClickOpenModal = () => {
+    messageModal.open({
+      message: '테스트',
+    });
+  };
 
   return (
     <Container>
@@ -44,7 +52,9 @@ export const Main = () => {
           <InputCompound.Input />
         </InputCompound.Container>
       </InputCompound>
-      <Button size="small">HELLO</Button>
+      <Button size="small" onClick={handleClickOpenModal}>
+        HELLO
+      </Button>
       <Button size="small" variant="contained">
         HELLO
       </Button>

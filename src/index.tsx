@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from '@components/theme/ThemeProvider';
 import { RecoilRoot } from 'recoil';
+import { MessageModal } from '@components/ui/modal/MessageModal';
+import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
@@ -12,6 +13,7 @@ root.render(
     <RecoilRoot>
       <ThemeProvider>
         <App />
+        <MessageModal />
       </ThemeProvider>
     </RecoilRoot>
   </React.StrictMode>,
