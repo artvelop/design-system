@@ -1,5 +1,5 @@
-import { atomMessageModalInfo } from '@src/recoil/messageModal';
 import { useSetRecoilState } from 'recoil';
+import { atomMessageModalInfo } from '@src/recoil/messageModal';
 
 export const useMessageModal = () => {
   const setMessageModalInfo = useSetRecoilState(atomMessageModalInfo);
