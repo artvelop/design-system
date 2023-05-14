@@ -5,7 +5,7 @@ import { Typography } from '@components/ui/typography/Typography';
 import { InputCompound } from '@components/ui/input';
 import { useState } from 'react';
 import { Button } from '@components/ui/button/Button';
-import { TabCompound } from '@components/ui/tab/Index';
+import { TabCompound } from '@components/ui/tab';
 import { Tooltip } from '@components/ui/tooltip/Tooltip';
 import { Divider } from '@components/ui/divider/Divider';
 import { useMessageModal } from '@hooks/useMessageModal';

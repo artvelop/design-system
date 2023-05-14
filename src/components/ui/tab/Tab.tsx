@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import React, { useMemo } from 'react';
 import { useContext } from 'react';
-import { TabContext } from './Index';
+import { TabContext } from '.';
 
 interface Props {
   value: string;
