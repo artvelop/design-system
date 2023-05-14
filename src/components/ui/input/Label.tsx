@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import React, { PropsWithChildren } from 'react';
 import { useContext } from 'react';
-import { InputContext } from './Index';
+import { InputContext } from '.';
 
 export const Label = ({ children }: PropsWithChildren) => {
   const { id } = useContext(InputContext);
