@@ -93,13 +93,13 @@ export const Main = () => {
       <Divider />
       <RadioGroup>
         <RadioButton
-          value={'like'}
+          value="like"
           onChangeState={setSelectOption}
           selectOption={selectOption}
           label="좋다"
         />
         <RadioButton
-          value={'hate'}
+          value="hate"
           onChangeState={setSelectOption}
           selectOption={selectOption}
           label="싫다"
