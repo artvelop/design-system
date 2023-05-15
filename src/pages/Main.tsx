@@ -9,12 +9,16 @@ import { TabCompound } from '@components/ui/tab';
 import { Tooltip } from '@components/ui/tooltip/Tooltip';
 import { Divider } from '@components/ui/divider/Divider';
 import { useMessageModal } from '@hooks/useMessageModal';
+import { RadioGroup } from '@components/ui/radio/RadioGroup';
+import { RadioButton } from '@components/ui/radio/RadioButton';
 
 type MainTabType = 'all' | 'set' | 'this';
+type SelectOptionType = 'like' | 'hate';
 
 export const Main = () => {
   const [inputValue, setInputValue] = useState('');
   const [tabValue, setTabValue] = useState<MainTabType>('all');
+  const [selectOption, setSelectOption] = useState<SelectOptionType>('like');
   const messageModal = useMessageModal();
 
   const handleChangeInputValue = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -87,6 +91,20 @@ export const Main = () => {
         </TabCompound>
       </Tooltip>
       <Divider />
+      <RadioGroup>
+        <RadioButton
+          value={'like'}
+          onChangeState={setSelectOption}
+          selectOption={selectOption}
+          label="좋다"
+        />
+        <RadioButton
+          value={'hate'}
+          onChangeState={setSelectOption}
+          selectOption={selectOption}
+          label="싫다"
+        />
+      </RadioGroup>
     </Container>
   );
 };
