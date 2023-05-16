@@ -11,6 +11,7 @@ import { Divider } from '@components/ui/divider/Divider';
 import { useMessageModal } from '@hooks/useMessageModal';
 import { RadioGroup } from '@components/ui/radio/RadioGroup';
 import { RadioButton } from '@components/ui/radio/RadioButton';
+import { CheckBox } from '@components/ui/chekbox/CheckBox';
 
 type MainTabType = 'all' | 'set' | 'this';
 type SelectOptionType = 'like' | 'hate';
@@ -19,7 +20,12 @@ export const Main = () => {
   const [inputValue, setInputValue] = useState('');
   const [tabValue, setTabValue] = useState<MainTabType>('all');
   const [selectOption, setSelectOption] = useState<SelectOptionType>('like');
+  const [checkValue, setCheckValue] = useState(false);
   const messageModal = useMessageModal();
+
+  const handleChangeCheckInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCheckValue(event.target.checked);
+  };
 
   const handleChangeInputValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -105,6 +111,7 @@ export const Main = () => {
           label="싫다"
         />
       </RadioGroup>
+      <CheckBox checked={checkValue} onChange={handleChangeCheckInput} label="동의" />
     </Container>
   );
 };
